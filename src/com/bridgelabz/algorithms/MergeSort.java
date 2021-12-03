@@ -1,8 +1,8 @@
 package com.bridgelabz.algorithms;
 
-public class MergeSort {
+public class MergeSort<T> {
 
-	public void mergeSort(int[] a, int low, int high) {
+	public<T extends Comparable<T>> void mergeSort(T[] a, int low, int high) {
 		int mid = (low + high) / 2;
 		if (low < high) {
 			mergeSort(a, low, mid);
@@ -12,17 +12,18 @@ public class MergeSort {
 
 	}
 
-	private void merge(int[] a, int low, int mid, int high) {
+	private <T extends Comparable<T>> void merge(T[] a, int low, int mid, int high) {
 		int n1 = mid - low + 1;
 		int n2 = high - mid;
 
-		int L[] = new int[n1];
-		int R[] = new int[n2];
+		String L[] = new String[n1];
+		String R[] = new String[n2];
+		
 
 		for (int i = 0; i < n1; i++)
-			L[i] = a[low + i];
+			L[i] = (String) a[low + i];
 		for (int j = 0; j < n2; j++)
-			R[j] = a[mid + 1 + j];
+			R[j] = (String) a[mid + 1 + j];
 		
 		int i, j, k;
 		i = 0;
@@ -30,24 +31,24 @@ public class MergeSort {
 		k = low;
 
 		while (i < n1 && j < n2) {
-			if (L[i] <= R[j]) {
-				a[k] = L[i];
+			if (L[i].compareTo(R[j])>0) {
+				a[k] = (T) L[i];
 				i++;
 			} else {
-				a[k] = R[j];
+				a[k] = (T) R[j];
 				j++;
 			}
 			k++;
 		}
 
 		while (i < n1) {
-			a[k] = L[i];
+			a[k] = (T) L[i];
 			i++;
 			k++;
 		}
 
 		while (j < n2) {
-			a[k] = R[j];
+			a[k] = (T) R[j];
 			j++;
 			k++;
 		}

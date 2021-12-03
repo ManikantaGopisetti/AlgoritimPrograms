@@ -7,6 +7,7 @@ public class Main {
 		int range=1000;
 		PrimeAnagramPalindrome primeAnagramPalindrome = new PrimeAnagramPalindrome();
 		primeAnagramPalindrome.isPrimeNum(range);
+		
 	}
 
 }
