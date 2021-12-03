@@ -4,13 +4,13 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Integer[] arr = { 52, 35, 42, 12, 50 };
-		InsertionSort<Integer> integerSort=new InsertionSort<Integer>();
-		integerSort.sort(arr);
+		Integer[] intArr = { 52, 35, 42, 12, 50 };
+		BubbleSort<Integer> integerSort=new BubbleSort<Integer>();
+		integerSort.sort(intArr);
 		
-		String[] s={"hi","mani","hello","bye"};
-		InsertionSort<String> stringSort2 = new InsertionSort<String>();
-		stringSort2.sort(s);
+		String[] strArr={"hi","mani","hello","bye"};
+		BubbleSort<String> stringSort = new BubbleSort<String>();
+		stringSort.sort(strArr);
 
 	}
 
