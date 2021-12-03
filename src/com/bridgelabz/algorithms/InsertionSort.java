@@ -1,14 +1,14 @@
 package com.bridgelabz.algorithms;
 import java.util.Arrays;
 
-public class InsertionSort {
+public class InsertionSort<T> {
 
-	public void sort(int[] arr) {
+	public <T extends Comparable<T>> void sort(T[] arr) {
 		for(int i=0;i<arr.length;i++) {
-			int element =arr[i];
+			T element =arr[i];
 			int index=i-1;
 			while(index>=0) {
-				if(arr[index]>element) {
+				if(arr[index].compareTo(element)>0) {
 					arr[index+1]=arr[index];
 					index--;
 				}else {
