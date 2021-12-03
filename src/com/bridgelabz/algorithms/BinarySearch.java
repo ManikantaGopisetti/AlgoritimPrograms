@@ -1,8 +1,8 @@
 package com.bridgelabz.algorithms;
 
-public class BinarySearch {
+public class BinarySearch<T> {
 
-	public int binarySearch(String[] array, int first, int last, String word) {
+	public <T extends Comparable<T>> Integer binarySearch(T[] array, int first, int last, T word) {
 
 		int mid = (first + last) / 2;
 
@@ -23,5 +23,12 @@ public class BinarySearch {
 			
 		} 
 		return -1;
+	}
+	public void result(int result) {
+		if (result == -1) {
+			System.out.println(" not Found the data");
+		} else {
+			System.out.println(" Found the data at index : " + result);
+		}
 	}
 }

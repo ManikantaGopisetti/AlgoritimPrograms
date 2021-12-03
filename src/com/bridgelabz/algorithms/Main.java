@@ -7,23 +7,29 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		
+		//for String 
 		String string = "Read,in,a,passage,of,words,from,File";
 		String[] strArray = string.split(",");
 		Arrays.sort(strArray);
-		int first = 0;
-		int last = strArray.length - 1;
-
-		System.out.println("Enter word to search : ");
-		String word = sc.next();
-
-		BinarySearch binarySearch = new BinarySearch();
-		int result = binarySearch.binarySearch(strArray, first, last, word);
-		if (result == -1) {
-			System.out.println(" not Found the word");
-		} else {
-			System.out.println(" Found the word at index : " + result);
-		}
-		sc.close();
+		Integer first = 0;
+		Integer last = strArray.length ;
+		System.out.print("Enter word to search : ");
+		String word=sc.nextLine();
+		BinarySearch<String> stringSearch = new BinarySearch<String>();
+		int result = stringSearch.binarySearch(strArray, first, last, word);
+		stringSearch.result(result);
+		
+		//for Integers
+		Integer[] intarray= {21,23,65,43,22};
+		Arrays.sort(intarray);
+		int intfirst = 0;
+		int intlast=intarray.length;
+		System.out.print("Enter num to search : ");
+		Integer data =sc.nextInt();
+		BinarySearch<Integer> integerSearch = new BinarySearch<Integer>();
+		int intresult = integerSearch.binarySearch(intarray, intfirst, intlast, data);
+		integerSearch.result(intresult);
 	}
 
 }
